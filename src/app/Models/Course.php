@@ -7,6 +7,7 @@ class Curso
     private $name;
     private $videos;
     private $feedbacks;
+
     public function __construct(string $name)
     {
         $this->name = $name;

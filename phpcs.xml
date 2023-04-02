@@ -11,7 +11,7 @@
     <file>src/app</file>
     <file>src/config</file>
     <file>public/index.php</file>
-    <file>src/database</file>
+    <!-- <file>src/database</file> -->
 
 
     <!-- inherit rules from: -->
