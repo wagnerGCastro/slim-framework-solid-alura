@@ -3,8 +3,9 @@
 namespace App\Models;
 
 use App\Models\Feedback;
+use App\Models\Punctuable;
 
-class Curso
+class Curso implements Punctuable
 {
     private $name;
     private $videos;
@@ -35,5 +36,10 @@ class Curso
     public function recoverVideos(): array
     {
         return $this->videos;
+    }
+
+    public function recoverScore(): int
+    {
+        return 100;
     }
 }

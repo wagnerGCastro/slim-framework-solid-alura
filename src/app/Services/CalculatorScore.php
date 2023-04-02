@@ -4,17 +4,12 @@ namespace App\Services;
 
 use App\Models\AluraPlus;
 use App\Models\Course;
+use App\Models\Punctuable;
 
 class CalculatorScore
 {
-    public function recoverScore($content)
+    public function recoverScore(Punctuable $content)
     {
-        if ($content instanceof Course) {
-            return 100;
-        } elseif ($content instanceof AluraPlus) {
-            return $content->minutesOfDuration() * 2;
-        } else {
-            throw new \DomainException('Only Alura+ courses and videos have scores');
-        }
+        return $this->recoverScore()
     }
 }
