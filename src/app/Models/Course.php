@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Feedback;
+
 class Curso
 {
     private $name;
@@ -15,13 +17,9 @@ class Curso
         $this->feedbacks = [];
     }
 
-    public function receiveFeedback(int $note, ?string $testimony): void
+    public function receiveFeedback(Feedback $feedback): void
     {
-        if ($note < 9 && empty($testimony)) {
-            throw new \DomainException('testimony required');
-        }
-
-        $this->feedbacks[] = [$note, $testimony];
+        $this->feedbacks[] = $feedback;
     }
 
     public function addVideo(Video $video)
