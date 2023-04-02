@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
-class AluraPlus extends Video
+use App\Models\Punctuable;
+
+class AluraPlus extends Video implements Punctuable
 {
     private $category;
 
@@ -15,5 +17,10 @@ class AluraPlus extends Video
     public function retrieveUrl(): string
     {
         return str_replace(' ', '-', strtolower($this->category));
+    }
+
+    public function recoverScore(): int
+    {
+        return $this->minutesOfDuration() * 2;
     }
 }
