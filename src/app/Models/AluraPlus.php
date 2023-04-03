@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-use App\{Models\Punctuable};
+use App\Models\Punctuable;
+use App\Models\Assistive;
 
-class AluraPlus extends Video implements Punctuable
+class AluraPlus extends Video implements Punctuable, Assistive
 {
     private string $category;
 
@@ -22,5 +23,9 @@ class AluraPlus extends Video implements Punctuable
     public function recoverScore(): int
     {
         return $this->minutesOfDuration() * 2;
+    }
+
+    public function assistive(): void
+    {
     }
 }
