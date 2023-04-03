@@ -2,11 +2,11 @@
 
 namespace App\Models;
 
-use App\Models\Punctuable;
+use App\{Models\Punctuable};
 
 class AluraPlus extends Video implements Punctuable
 {
-    private $category;
+    private string $category;
 
     public function __construct(string $name, string $category)
     {
@@ -16,7 +16,7 @@ class AluraPlus extends Video implements Punctuable
 
     public function retrieveUrl(): string
     {
-        return str_replace(' ', '-', strtolower($this->category));
+        return 'https://videos.alura.com.br/' . str_replace(' ', '-', strtolower($this->category));
     }
 
     public function recoverScore(): int

@@ -2,10 +2,8 @@
 
 namespace App\Models;
 
-class Punctuable
+interface Punctuable
 {
-    public function recoverScore(): int|never
-    {
-        //
-    }
+    public function recoverScore(): int;
+    public function assistive(): void;
 }
