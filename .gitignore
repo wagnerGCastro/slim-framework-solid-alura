@@ -53,3 +53,6 @@ development.env
 
 phinx.php
 Migration.php
+
+/tools
+.vscode

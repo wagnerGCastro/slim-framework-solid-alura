@@ -2,20 +2,12 @@
 
 namespace App\Services;
 
-use App\Models\AluraPlus;
-use App\Models\Course;
+use App\Models\Punctuable;
 
 class Assistive
 {
-    public function assistCourse(Course $course)
+    public function assistive(Punctuable $content)
     {
-        foreach ($course->recoverVideos() as $video) {
-            $video->assist();
-        }
-    }
-
-    public function assistAluraPlus(AluraPlus $aluraPlus)
-    {
-        $aluraPlus->assist();
+        $content->assistive();
     }
 }
