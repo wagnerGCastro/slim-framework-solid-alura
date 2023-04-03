@@ -4,8 +4,9 @@ namespace App\Models;
 
 use App\Models\Feedback;
 use App\Models\Punctuable;
+use App\Models\Assistive;
 
-class Course implements Punctuable
+class Course implements Punctuable, Assistive
 {
     private $name;
     private $videos;
